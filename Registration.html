@@ -1,0 +1,148 @@
+<html>
+<head>
+	<title> Online Shopping </title>
+	
+<script>
+<!-- Validating the Form-->
+function ValidateForm() {
+  let x = document.forms["regForm"]["Name"].value;
+  if (x == "") {
+    alert("Name field can't be empty");
+    return false;
+  }
+  }
+  function ValidateName(Name){
+  var nameformat = /^([A-Za-z]{3,20})$/;
+  if(Name.value.match(nameformat))
+  {
+	document.regForm.text1.focus();
+	return true;
+  }
+  else
+  {
+	alert("Invalid Name.");
+	document.regForm.text1.focus();
+	return false;
+  }
+  }
+function ValidateNumber(PhoneNumber) {
+  var numberformat = /^([0-9]{10})$/;
+	if(PhoneNumber.value.match(numberformat))
+	{
+	document.regForm.text1.focus();
+return true;
+}
+else
+{
+alert("Invalid Number.");
+document.regForm.text1.focus();
+return false;
+}
+}
+
+
+function ValidateEmail(E_mail) 
+{
+  var mailformat = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+	if(E_mail.value.match(mailformat))
+	{
+	document.regForm.text1.focus();
+return true;
+}
+else
+{
+alert("Invalid email address.");
+document.regForm.text1.focus();
+return false;
+}
+}  
+
+</script>
+<head>
+<style>
+body {
+  background-color: linen;
+}
+
+h5 {
+  color: maroon;
+  margin-left: 40px;
+} 
+</style>
+
+<body>
+	<form name="regForm"  align="center">
+
+		<table>
+		<tr>
+		<td>
+		<h3>Registration Page<h3>
+		</td>
+		</tr>
+		<tr>
+			<td>
+			<label:Name> <span> Name </span> </label>
+			</td>
+			<td>			
+			<input type="Text" placeholder="Enter your name.." name="Name">
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<label:E_mail> <span> E-Mail </span> </label>
+			</td>
+			<td>			
+			<input type="Text" placeholder="Enter your mail address.."  onclick="return ValidateName(Name)" name="E_mail">
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<label:Phone Number> <span> Phone Number </span> </label>
+			</td>
+			<td>			
+			<input type="Text" placeholder="Enter your phone number.." onclick="return ValidateEmail(E_mail)" name="PhoneNumber">
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+			<label:Gender> <span> Gender </span> </label>
+			</td>
+			<td>
+			<input type="radio" id="html" name="Gender" value="Male" onclick="return ValidateNumber(PhoneNumber)">
+			<label for="male">Male</label><br>
+
+			<input type="radio" id="css" name="Gender" value="Female" onclick="return ValidateNumber(PhoneNumber)">
+			<label for="female">Female</label><br>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<label:Address> <span> Address </span> </label>
+			</td>
+			<td>			
+			<input type="Text" placeholder="Enter your Address.." name="Address">
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<label:D.O.B> <span> Date of Birth </span> </label>
+			</td>
+			<td>			
+			<input type="Text" placeholder="Enter your birth date.." name="D.O.B">
+			</td>
+		</tr>
+		
+		<tr>
+		<td>
+		
+		</td>
+		</tr>
+		<tr>
+			<td>
+			<button class="button" type="submit">Register</button>
+			</td>
+		</tr>
+	</form>
+</body>
+</html>
